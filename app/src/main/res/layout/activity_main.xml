@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/testText"
+            android:gravity="center"
+            android:text="@string/testText"
+            android:padding="10dp"
+            android:textSize="24sp"
+            >
+        </TextView>
+        <TableRow android:layout_marginRight="10dp">
+            <TextView android:text="@string/size"></TextView>
+            <Button android:id="@+id/bigger"
+                android:text="@string/bigger"></Button>
+            <Button android:id="@+id/smaller"
+                android:text="@string/smaller"></Button>
+        </TableRow>
+        <TableRow android:layout_marginRight="3dp">
+            <TextView android:text="@string/color"></TextView>
+            <Button android:id="@+id/red"
+                android:text="@string/red"></Button>
+            <Button android:id="@+id/green"
+                android:text="@string/green"></Button>
+            <Button android:id="@+id/blue"
+                android:text="@string/blue"></Button>
+        </TableRow>
+    <TableRow android:layout_marginRight="3dp">
+        <TextView android:text="@string/style"></TextView>
+        <Button android:id="@+id/bold"
+            android:text="@string/bold"></Button>
+        <Button android:id="@+id/italics"
+            android:text="@string/italics"></Button>
+        <Button android:id="@+id/normal"
+            android:text="@string/normal"></Button>
+    </TableRow>
+    </TableLayout>
+
+

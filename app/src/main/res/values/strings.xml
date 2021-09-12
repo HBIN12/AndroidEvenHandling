@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">AndroidEvenHandling</string>
+    <string name="testText">测试文字，测试文字！</string>
+    <string name="size">大小</string>
+    <string name="bigger">增大</string>
+    <string name="smaller">缩小</string>
+    <string name="color">颜色</string>
+    <string name="red">红色</string>
+    <string name="green">绿色</string>
+    <string name="blue">蓝色</string>
+    <string name="style">样式</string>
+    <string name="bold">加粗</string>
+    <string name="italics">倾斜</string>
+    <string name="normal">默认</string>
+</resources>
