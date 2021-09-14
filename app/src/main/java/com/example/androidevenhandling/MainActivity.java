@@ -7,13 +7,15 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button red, blue, green, bigger, smaller, bold, italic, normal;
+    private Button red, blue, green, bigger, smaller, bold, italic, normal,mybutton,mBtn;
     private TextView testtext;
     private boolean isbold = false, isitalic = false;
 
@@ -30,6 +32,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bold=(Button) findViewById(R.id.bold);
         italic=(Button)findViewById(R.id.italics);
         normal=(Button)findViewById(R.id.normal);
+        mybutton=(Button)findViewById(R.id.mybutton);
+        mBtn=(Button)findViewById(R.id.mBtn) ;
+        mBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("监听事件被触发了");
+            }
+        });
+        mybutton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction()==MotionEvent.ACTION_DOWN){
+                    System.out.println("监听器的事件被触发了");
+                }
+                return false;
+            }
+        });
         ColorListner myColorListner = new ColorListner();
         SizeListner mySizeListtner = new SizeListner(testtext);
         bigger.setOnClickListener(mySizeListtner);
@@ -97,6 +116,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    public void clickEventHandler(View view){
+        Toast.makeText(this,"直接绑定到标签的事件被触发了",Toast.LENGTH_LONG).show();
+    }
+
     private class ColorListner implements View.OnClickListener {
         public void onClick(View v) {
             switch (v.getId()) {
@@ -118,6 +141,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
         }
+    }
+    @Override
+    public boolean onTouchEvent(MotionEvent event){
+        if (event.getAction()==MotionEvent.ACTION_DOWN){
+            System.out.println("Activity中的事件被触发了");
+        }
+        return false;
     }
 
 }

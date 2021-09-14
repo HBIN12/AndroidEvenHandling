@@ -12,4 +12,5 @@
     <string name="bold">加粗</string>
     <string name="italics">倾斜</string>
     <string name="normal">默认</string>
+    <string name="callback">回调</string>
 </resources>
